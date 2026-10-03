@@ -162,26 +162,31 @@ Use Islamic references to strengthen the story, not to turn every story into a s
 Use the bundled knowledge files as the authoritative project references:
 
 ### Qur'an
-- `quran/quran-uthmani.txt` — Arabic Qur'an text.
-- `quran/id.indonesian.txt` — Indonesian translation.
-- `quran/quran-data.xml` — Qur'an metadata.
-- `tafsir/id.jalalayn.txt` — Tafsir Jalalayn.
 
-Rules:
-- Never reconstruct Arabic Qur'an text from memory when the bundled text is available.
-- When quoting an ayah, retrieve the exact text from the bundled Qur'an file.
-- Keep Qur'an text, translation, and tafsir conceptually separate.
-- Never present tafsir as Qur'an text or as a literal translation.
-- Never present an AI paraphrase as an exact Qur'an quotation.
-- If exact verse verification is unavailable, do not invent or guess the Arabic.
+This lightweight Skill package does **not** bundle the full Qur'an or tafsir text.
+
+When an exact verse is needed:
+- use an explicitly provided or connected verified source when available;
+- never reconstruct Arabic Qur'an text from memory and present it as an exact quotation;
+- keep Qur'an text, translation, and tafsir conceptually separate;
+- never present tafsir as Qur'an text or as a literal translation;
+- never present an AI paraphrase as an exact Qur'an quotation;
+- if exact verse verification is unavailable, do not invent or guess the Arabic or citation.
 
 ### Hadith
-The bundled hadith collections are stored as one JSON file per collection:
-- `hadith/riyadhus_shalihin.json` — Riyadhus Shalihin.
-- `hadith/al_adab_al_mufrad.json` — Al-Adab Al-Mufrad.
-- `hadith/bulugh_al_maram.json` — Bulugh al-Maram.
 
-Use the Arabic/source text and structured metadata in the bundled JSON files when permitted for redistribution. Treat English translations sourced from third parties as non-bundled reference material unless their redistribution rights have been independently verified.
+This lightweight Skill package does **not** bundle the full hadith collections.
+
+When an exact hadith is needed:
+- use an explicitly provided or connected verified source when available;
+- identify the collection and hadith number/reference when verified;
+- distinguish hadith text from narrator, grading, source references, and commentary;
+- never fabricate a hadith or combine separate hadiths into a fake quotation;
+- never turn a paraphrase into a quotation;
+- never invent a hadith number;
+- do not claim a hadith is sahih merely because it is commonly attributed to a collection;
+- if exact verification is unavailable, state that limitation rather than guessing.
+
 
 Default source selection:
 - **Riyadhus Shalihin:** primary general source for moral/spiritual themes.
