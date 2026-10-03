@@ -1,48 +1,46 @@
 # Knowledge Map
 
-This document defines the bundled reference layout for the **Komikus** children's-comic skill.
+This document defines the **lightweight reference/index layer** for the Komikus children's-comic Skill.
 
 ## Package Layout
 
-The skill package keeps `SKILL.md` at the package root and stores reference material in sibling directories:
+The distributable Skill package intentionally contains only:
 
 ```
 SKILL.md
-hadith/
-quran/
-tafsir/
 references/
+└── KNOWLEDGE_MAP.md
 ```
 
-Paths below are therefore **package-relative**. Do not prepend `knowledge/`.
+Large raw Qur'an, tafsir, and hadith datasets are **not bundled** in the Skill ZIP. They can make the package unnecessarily large and are not required for the Skill's core comic-generation workflow.
 
-## Qur'an
+## Religious Knowledge Sources
 
-- `quran/quran-uthmani.txt` — primary Arabic Qur'an text.
-- `quran/id.indonesian.txt` — Indonesian translation.
-- `quran/quran-data.xml` — structural Qur'an metadata.
+The Skill may use religious sources that are explicitly provided or connected by the user/runtime.
 
-## Tafsir
+Recommended source roles:
 
-- `tafsir/id.jalalayn.txt` — Tafsir Jalalayn. Treat tafsir as explanation/context, never as Qur'an text or a literal translation.
+- Qur'an: verified Qur'an text plus a clearly identified Indonesian translation when needed.
+- Tafsir: use only as explanation/context; never present tafsir as Qur'an text or a literal translation.
+- Hadith: identify the collection, reference/number, narrator, grading, and commentary separately when those details are verified.
 
-## Hadith
+The following collections are useful conceptual source categories when available:
 
-The bundled hadith collections are consolidated into one JSON file per collection:
+- Riyadhus Shalihin — moral and spiritual themes.
+- Al-Adab Al-Mufrad — manners, parents, children, neighbours, compassion, and social behavior.
+- Bulugh al-Maram — worship and ahkam-oriented subjects.
 
-- `hadith/riyadhus_shalihin.json` — Riyadhus Shalihin.
-- `hadith/al_adab_al_mufrad.json` — Al-Adab Al-Mufrad.
-- `hadith/bulugh_al_maram.json` — Bulugh al-Maram.
+These names are **source guidance, not bundled files**.
 
-Use the structured metadata and Arabic/source text contained in these files when permitted for redistribution.
+## Retrieval and Integrity Rules
 
-For distributable packages, include only hadith material whose redistribution rights are explicitly verified. Third-party English translations sourced from Sunnah.com are not assumed to be redistributable merely because structured dataset metadata is CC0.
+1. Prefer an explicitly provided or connected verified source for exact religious quotations.
+2. Never reconstruct Qur'an or hadith quotations from model memory and label them as exact.
+3. Never present an AI paraphrase as an exact quotation.
+4. Keep Qur'an text, translation, tafsir, hadith text, narrator information, grading, and commentary conceptually distinct.
+5. If exact verification is unavailable, do not invent or guess a quotation, citation, or reference number.
+6. If the user needs an exact quotation, explain the verification limitation and use a verifiable source when one is available.
 
-## Retrieval Rules
+## Package Design Principle
 
-1. Prefer exact bundled source text for religious quotations.
-2. Use metadata for identification, navigation, collection, and reference numbers.
-3. Never reconstruct Qur'an or hadith quotations from model memory when the exact bundled text is available.
-4. Never present an AI paraphrase as an exact quotation.
-5. Keep Qur'an text, translation, tafsir, hadith text, narrator information, grading, and commentary conceptually distinct.
-6. If exact verification is unavailable, do not invent or guess a quotation or reference number.
+The Skill package should remain small and focused on **behavior, workflow, continuity, story design, and source-integrity rules**. Large reference corpora belong outside the distributable Skill package unless the target platform explicitly supports and requires them.
