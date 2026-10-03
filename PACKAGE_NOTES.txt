@@ -1,0 +1,6 @@
+Children Comic Generator Skill
+
+This distributable package contains the skill instructions and bundled reference data.
+Third-party English hadith translations were excluded from the distributable hadith JSON.
+Hadith JSON was sanitized to retain Arabic/structured reference material only.
+Verify and retain the applicable source licenses included with the original materials.
