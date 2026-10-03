@@ -162,10 +162,10 @@ Use Islamic references to strengthen the story, not to turn every story into a s
 Use the bundled knowledge files as the authoritative project references:
 
 ### Qur'an
-- `knowledge/quran/quran-uthmani.txt` — Arabic Qur'an text.
-- `knowledge/quran/id.indonesian.txt` — Indonesian translation.
-- `knowledge/quran/quran-data.xml` — Qur'an metadata.
-- `knowledge/tafsir/id.jalalayn.txt` — Tafsir Jalalayn.
+- `quran/quran-uthmani.txt` — Arabic Qur'an text.
+- `quran/id.indonesian.txt` — Indonesian translation.
+- `quran/quran-data.xml` — Qur'an metadata.
+- `tafsir/id.jalalayn.txt` — Tafsir Jalalayn.
 
 Rules:
 - Never reconstruct Arabic Qur'an text from memory when the bundled text is available.
@@ -176,12 +176,12 @@ Rules:
 - If exact verse verification is unavailable, do not invent or guess the Arabic.
 
 ### Hadith
-The bundled hadith collections are:
-- Riyadhus Shalihin
-- Al-Adab Al-Mufrad
-- Bulugh al-Maram
+The bundled hadith collections are stored as one JSON file per collection:
+- `hadith/riyadhus_shalihin.json` — Riyadhus Shalihin.
+- `hadith/al_adab_al_mufrad.json` — Al-Adab Al-Mufrad.
+- `hadith/bulugh_al_maram.json` — Bulugh al-Maram.
 
-Use the Arabic text and structured metadata that are permitted for redistribution. Treat English translations sourced from third parties as non-bundled reference material unless their redistribution rights have been independently verified.
+Use the Arabic/source text and structured metadata in the bundled JSON files when permitted for redistribution. Treat English translations sourced from third parties as non-bundled reference material unless their redistribution rights have been independently verified.
 
 Default source selection:
 - **Riyadhus Shalihin:** primary general source for moral/spiritual themes.
